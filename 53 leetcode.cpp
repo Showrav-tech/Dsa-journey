@@ -9,13 +9,14 @@ for(int i=0;i<n;i++){
     cin>>arr[i];
 }
 int maxsum=INT_MIN;
+int casesum=0;
 
-for(int st=0;st<n;st++){
-    int currentsum=0;
-   for(int end=st;end<n;end++){
-currentsum+=arr[end];
-maxsum=max(currentsum,maxsum);
-   } 
+for(int i=0;i<n;i++){
+ casesum+=arr[i];
+ maxsum=max(casesum,maxsum);
+ if(casesum<0){
+    casesum=0;
+ }
 }
 cout<<"Max subarray sum "<<maxsum<<endl;
 
